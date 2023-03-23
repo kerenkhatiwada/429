@@ -17,14 +17,11 @@ def before_send(event, hint):
 
 sentry_sdk.init(
     dsn="https://55bf09aa2ba94a0f976413998ffe8581@o1145026.ingest.sentry.io/4504889400033280",
-    # Set traces_sample_rate to 1.0 to capture 100%
-    # of transactions for performance monitoring.
-    # We recommend adjusting this value in production.
     traces_sample_rate=1.0,
 
     debug=True,
     before_send=before_send,
-    # ignore_errors=[NameError],
+    # ignore_errors=,
 )
 
 
