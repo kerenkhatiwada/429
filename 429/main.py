@@ -5,7 +5,7 @@ from distutils.log import debug
 import sentry_sdk
 
 def before_send(event, hint):
-    print("this is event", event)
+    # print("this is event", event)
     # # print("this is hint", hint)
     # if 'exc_info' in hint:
     #     exc_type, exc_value, tb = hint['exc_info']
@@ -21,10 +21,11 @@ sentry_sdk.init(
 
     debug=True,
     before_send=before_send,
-    # ignore_errors=,
+    # ignore_errors=[],
 )
 
+# raise KeyError("invalid key")
 
-division_by_zero = 1 / 0
+# division_by_zero = 1 / 0
 
 # raise NameError("context test")
