@@ -1,5 +1,4 @@
 #run: python3 main.py
-# sentry-cli monitors run 63261d96-2027-472a-a8bb-9895dbebd793 -- python ./main.py
 
 from distutils.log import debug
 import sentry_sdk
