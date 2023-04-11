@@ -7,11 +7,11 @@ import sentry_sdk
 def before_send(event, hint):
     # print("this is event", event)
     # # print("this is hint", hint)
-    # if 'exc_info' in hint:
-    #     exc_type, exc_value, tb = hint['exc_info']
-    #     if isinstance(exc_value, NameError):
-    #         print("before return none")
-    #         return None
+    if 'exc_info' in hint:
+        exc_type, exc_value, tb = hint['exc_info']
+        if isinstance(exc_value, NameError):
+            print("before return none")
+            return None
     return event
     
 
@@ -26,6 +26,6 @@ sentry_sdk.init(
 
 # raise KeyError("invalid key")
 
-# division_by_zero = 1 / 0
+division_by_zero = 1 / 0
 
 # raise NameError("context test")
